@@ -134,5 +134,25 @@ Indica si son:
 - Lenguaje de programación
 - Lenguaje de modelado
 - Otro tipo (explica cuál)
+``` mermaid
+classDiagram
+    class Producto {
+        -String nombre
+        -double precioBase
+        +Producto(String nombre, double precioBase)
+        +double getPrecioBase()
+    }
 
+    class CalculadoraIVA {
+        -double IVA
+        +double calcularPrecioFinal(double precio)
+    }
+
+    class Main {
+        +main(String[] args)$
+    }
+
+    %% Relaciones
+    Main ..> Producto : <<instantiates>>
+    Main ..> CalculadoraIVA : <<instantiates>>
 
